@@ -1,5 +1,19 @@
-<!-- BEGIN:nextjs-agent-rules -->
-# This is NOT the Next.js you know
+# Next.js Project Guidelines
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
-<!-- END:nextjs-agent-rules -->
+## Development Commands
+- `npm run dev` - Start development server (localhost:3000)
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+
+## Important Notes
+- **File Structure**: Uses App Router (pages in `app/` directory, not `pages/`)
+- **Styling**: Tailwind CSS v4 configured via `postcss.config.mjs`
+- **TypeScript**: Strict mode enabled with Next.js plugin
+- **Components**: Edit `app/page.tsx` to modify the homepage
+- **CSS**: No separate CSS files needed - use Tailwind classes directly
+
+## Common Gotchas
+- Next.js 16 has breaking changes from older versions - consult official docs
+- Server components are default in App Router - use 'use client' for client-side logic
+- Tailwind v4 uses different syntax than v3 - check configuration
