@@ -2,23 +2,28 @@
 
 import { Card } from "@/components/ui/Card";
 import { motion } from "framer-motion";
-import { Layout, Smartphone, Search, ArrowUpRight } from "lucide-react";
+import { Database, Server, Zap, ArrowUpRight, Bot } from "lucide-react";
 
 const services = [
   {
-    title: "UI/UX Design",
-    description: "Designing intuitive and engaging user interfaces that provide seamless user experiences.",
-    icon: Layout,
+    title: "Desarrollo Backend",
+    description: "Construcción de APIs REST robustas y lógica de negocio compleja utilizando Laravel y PHP 8+.",
+    icon: Server,
   },
   {
-    title: "Web Design",
-    description: "Creating visually stunning and responsive websites tailored to your brand's unique identity.",
-    icon: Search,
+    title: "Arquitectura Escalable",
+    description: "Diseño de sistemas mantenibles siguiendo patrones como SOLID, Clean Architecture y metodologías ágiles.",
+    icon: Database,
   },
   {
-    title: "Landing Page",
-    description: "Developing high-converting landing pages that drive results and capture audience attention.",
-    icon: Smartphone,
+    title: "Interfaces Dinámicas",
+    description: "Desarrollo de experiencias de usuario interactivas y reactivas con el stack TALL (Tailwind, Alpine, Laravel, Livewire).",
+    icon: Zap,
+  },
+  {
+    title: "Desarrollo Asistido por IA",
+    description: "Utilización de agentes de IA como OpenCode, ClaudeCode y ecosistema Gentle AI con Engram para optimización de sesiones, trabajo en CLI y máxima eficiencia en el uso de tokens.",
+    icon: Bot,
   },
 ];
 
@@ -29,26 +34,15 @@ export function Services() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-xl">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              My <span className="text-primary italic">Services</span>
+              Mis <span className="text-primary italic">Servicios</span>
             </h2>
             <p className="text-text-dim">
-              I provide a wide range of services including UI/UX design, web design, and landing page development. 
-              My goal is to create products that are both beautiful and functional.
+              Ofrezco soluciones integrales de desarrollo backend, enfocadas en la escalabilidad, el rendimiento y la mantenibilidad del código para impulsar tu negocio.
             </p>
-          </div>
-          <div className="flex gap-2">
-            {[...Array(3)].map((_, i) => (
-              <div
-                key={i}
-                className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                  i === 0 ? "bg-primary" : "bg-zinc-800"
-                }`}
-              />
-            ))}
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -65,11 +59,6 @@ export function Services() {
                 <p className="text-text-dim text-sm leading-relaxed mb-8">
                   {service.description}
                 </p>
-                <div className="mt-auto flex justify-end">
-                  <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:text-black transition-all">
-                    <ArrowUpRight size={20} />
-                  </div>
-                </div>
               </Card>
             </motion.div>
           ))}

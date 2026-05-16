@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
@@ -17,10 +18,10 @@ export function WhyHireMe() {
           <div className="absolute inset-0 bg-primary/20 rounded-3xl translate-x-4 translate-y-4" />
           <div className="relative h-full w-full rounded-3xl overflow-hidden border border-white/10">
             <Image
-              src="/why-hire-me.png"
+              src="/avatar-2.png"
               alt="Why Hire Me"
               fill
-              className="object-cover"
+              className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
             />
           </div>
         </motion.div>
@@ -32,27 +33,29 @@ export function WhyHireMe() {
           className="flex-1 text-left"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
-            Why <span className="text-primary italic">Hire me?</span>
+            Sobre <span className="text-primary italic"> mi</span>
           </h2>
           <p className="text-text-dim mb-10 leading-relaxed max-w-xl">
-            I bring a unique combination of design expertise and business strategy to every project. 
-            With over 10 years of experience, I know how to create designs that not only look great but also drive user engagement and achieve business goals.
+            Desarrollador Backend especializado en Laravel y PHP con más de 2.5 años de experiencia en la creación y mantenimiento de aplicaciones web escalables.
+            Especializado en desarrollo de lógica de negocio, APIs REST, Livewire y Tailwind CSS. Proactivo, autodidacta y orientado a resultados con fuerte enfoque en código limpio.
           </p>
 
           <div className="grid grid-cols-2 gap-8 mb-12">
             <div>
-              <span className="text-4xl font-bold block mb-1">450+</span>
-              <span className="text-sm text-text-dim">Project Completed</span>
+              <span className="text-4xl font-bold block mb-1">2.5+</span>
+              <span className="text-sm text-text-dim">Años de Experiencia</span>
             </div>
             <div>
-              <span className="text-4xl font-bold block mb-1">10+</span>
-              <span className="text-sm text-text-dim">Years Experience</span>
+              <span className="text-4xl font-bold block mb-1">5+</span>
+              <span className="text-sm text-text-dim">Proyectos Exitosos</span>
             </div>
           </div>
 
-          <Button size="lg" variant="primary">
-            Hire me
-          </Button>
+          <Link href="#contact">
+            <Button size="lg" variant="primary">
+              Contactame
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </section>
