@@ -2,7 +2,7 @@
 
 import { Card } from "@/components/ui/Card";
 import { motion } from "framer-motion";
-import { Database, Server, Zap, ArrowUpRight, Bot } from "lucide-react";
+import { Database, Server, Zap, Bot } from "lucide-react";
 
 const services = [
   {
