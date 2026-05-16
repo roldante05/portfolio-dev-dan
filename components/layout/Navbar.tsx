@@ -6,11 +6,10 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Services", href: "#services" },
-  { name: "Portfolio", href: "#portfolio" },
-  { name: "Blog", href: "#blog" },
+  { name: "Inicio", href: "#home" },
+  { name: "Sobre mí", href: "#about" },
+  { name: "Servicios", href: "#services" },
+  { name: "Portafolio", href: "#portfolio" },
 ];
 
 export function Navbar() {
@@ -36,7 +35,7 @@ export function Navbar() {
         )}
       >
         <Link href="/" className="text-xl font-bold tracking-tighter">
-          JENNY<span className="text-primary">.</span>
+          DANTE<span className="text-primary">.</span>
         </Link>
         <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
@@ -49,9 +48,11 @@ export function Navbar() {
             </Link>
           ))}
         </div>
-        <Button size="sm" variant="primary">
-          Let&apos;s Talk
-        </Button>
+        <Link href="#contact">
+          <Button size="sm" variant="primary">
+            Hablemos
+          </Button>
+        </Link>
       </nav>
     </header>
   );

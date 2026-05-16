@@ -4,6 +4,22 @@ import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
+const SocialIcons = {
+  Linkedin: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+      <rect width="4" height="12" x="2" y="9" />
+      <circle cx="4" cy="4" r="2" />
+    </svg>
+  ),
+  Github: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+      <path d="M9 18c-4.51 2-5-2-7-2" />
+    </svg>
+  ),
+};
+
 
 export function Hero() {
   return (
@@ -18,12 +34,12 @@ export function Hero() {
         className="flex flex-col items-center text-center max-w-4xl"
       >
         <span className="glass px-4 py-1.5 rounded-full text-xs font-medium uppercase tracking-widest text-primary mb-6">
-          Hello!
+          ¡Hola!
         </span>
-        
+
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
-          I&apos;m <span className="text-primary italic">Jenny</span>,<br />
-          Product Designer
+          Soy <span className="text-primary italic">Dante</span>,<br />
+          Desarrollador web
         </h1>
 
         <div className="relative mb-12">
@@ -31,8 +47,8 @@ export function Hero() {
           <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-primary/20 p-4">
             <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-primary">
               <Image
-                src="/avatar.png"
-                alt="Jenny"
+                src="/profile-linkedin.png"
+                alt="Dante"
                 fill
                 className="object-cover"
               />
@@ -50,8 +66,8 @@ export function Hero() {
                 <Star key={i} size={14} fill="currentColor" />
               ))}
             </div>
-            <span className="text-xl font-bold">10 Years</span>
-            <span className="text-[10px] text-text-dim uppercase tracking-wider">Experience</span>
+            <span className="text-xl font-bold">2.5 Años</span>
+            <span className="text-[10px] text-text-dim uppercase tracking-wider">Experiencia</span>
           </motion.div>
 
           <motion.div
@@ -63,23 +79,29 @@ export function Hero() {
               <Star size={16} />
             </div>
             <div className="flex flex-col items-start">
-              <span className="text-sm font-bold italic">UI/UX Design</span>
-              <span className="text-[10px] text-text-dim">Specialist</span>
+              <span className="text-sm font-bold italic">Laravel & PHP</span>
+              <span className="text-[10px] text-text-dim">Especialista</span>
             </div>
           </motion.div>
         </div>
 
         <p className="text-text-dim max-w-lg mb-10 leading-relaxed">
-          I am a Product Designer based in Mumbai. I am very passionate about my work and I am looking for a new job.
+          Especializado en la creación y mantenimiento de aplicaciones web escalables con un fuerte enfoque en código limpio y buenas prácticas.
         </p>
 
         <div className="flex gap-4">
-          <Button size="lg" variant="primary">
-            Portfolio
-          </Button>
-          <Button size="lg" variant="outline">
-            Hire Me
-          </Button>
+          {Object.entries(SocialIcons).map(([name, Icon]) => (
+            <a
+              key={name}
+              href={name === "Linkedin" ? "https://www.linkedin.com/in/danteroldan" : "https://github.com/roldante05"}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={name}
+              className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-text-dim hover:bg-primary hover:text-black transition-all"
+            >
+              <Icon className="w-5 h-5" />
+            </a>
+          ))}
         </div>
       </motion.div>
     </section>

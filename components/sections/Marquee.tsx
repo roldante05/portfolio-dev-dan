@@ -3,13 +3,19 @@
 import { motion } from "framer-motion";
 
 const skills = [
-  "Product Design",
-  "App Design",
-  "Dashboard",
-  "Wireframe",
-  "User Research",
-  "Landing Page",
-  "Branding",
+  "Laravel",
+  "PHP",
+  "MySQL",
+  "Livewire",
+  "Tailwind CSS",
+  "JavaScript",
+  "PHPUnit",
+  "PEST",
+  "Git",
+  "Postman",
+  "Linux",
+  "Scrum",
+  "API Integration",
 ];
 
 export function Marquee() {

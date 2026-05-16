@@ -1,18 +1,6 @@
 import Link from "next/link";
 
 const SocialIcons = {
-  Twitter: (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-    </svg>
-  ),
-  Instagram: (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-    </svg>
-  ),
   Linkedin: (props: React.SVGProps<SVGSVGElement>) => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
       <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -28,22 +16,26 @@ const SocialIcons = {
   ),
 };
 
+const fechaActual = new Date();
+
 export function Footer() {
   return (
     <footer className="py-12 px-6 border-t border-white/5 bg-[#0E0E0E]">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="flex flex-col items-center md:items-start gap-4 text-center md:text-left">
           <Link href="/" className="text-2xl font-bold tracking-tighter">
-            JENNY<span className="text-primary">.</span>
+            DANTE<span className="text-primary">.</span>
           </Link>
           <p className="text-text-dim text-sm max-w-xs">
-            A passionate Product Designer focused on creating premium digital experiences.
+            Desarrollador Backend especializado en Laravel y PHP enfocado en crear experiencias digitales de alta calidad.
           </p>
           <div className="flex gap-4 mt-2">
             {Object.entries(SocialIcons).map(([name, Icon]) => (
               <a
                 key={name}
-                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                href={name === "Linkedin" ? "https://www.linkedin.com/in/danteroldan" : "https://github.com/roldante05"}
                 aria-label={name}
                 className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-text-dim hover:bg-primary hover:text-black transition-all"
               >
@@ -55,25 +47,24 @@ export function Footer() {
 
         <div className="flex flex-wrap justify-center gap-10 text-sm font-medium">
           <div className="flex flex-col gap-3">
-            <span className="text-white uppercase tracking-widest text-[10px] mb-2 opacity-50">Navigation</span>
-            <Link href="#home" className="text-text-dim hover:text-primary transition-colors">Home</Link>
-            <Link href="#services" className="text-text-dim hover:text-primary transition-colors">Services</Link>
-            <Link href="#portfolio" className="text-text-dim hover:text-primary transition-colors">Portfolio</Link>
+            <span className="text-white uppercase tracking-widest text-[10px] mb-2 opacity-50">Navegación</span>
+            <Link href="#home" className="text-text-dim hover:text-primary transition-colors">Inicio</Link>
+            <Link href="#services" className="text-text-dim hover:text-primary transition-colors">Servicios</Link>
+            <Link href="#portfolio" className="text-text-dim hover:text-primary transition-colors">Portafolio</Link>
           </div>
           <div className="flex flex-col gap-3">
-            <span className="text-white uppercase tracking-widest text-[10px] mb-2 opacity-50">Company</span>
-            <Link href="#" className="text-text-dim hover:text-primary transition-colors">About</Link>
-            <Link href="#" className="text-text-dim hover:text-primary transition-colors">Contact</Link>
-            <Link href="#" className="text-text-dim hover:text-primary transition-colors">Privacy Policy</Link>
+            <span className="text-white uppercase tracking-widest text-[10px] mb-2 opacity-50">Compañía</span>
+            <Link href="#" className="text-text-dim hover:text-primary transition-colors">Sobre mí</Link>
+            <Link href="#" className="text-text-dim hover:text-primary transition-colors">Contacto</Link>
           </div>
         </div>
 
         <div className="text-center md:text-right">
           <p className="text-text-dim text-xs">
-            © 2024 Jenny Designer. All rights reserved.
+            © {fechaActual.getFullYear()} Dante Developer. Todos los derechos reservados.
           </p>
-          <p className="text-text-dim text-[10px] mt-2 uppercase tracking-tighter opacity-30">
-            Designed with ❤️ and Next.js
+          <p className="text-text-dim text-[10px] mt-2 uppercase tracking-tighter">
+            Diseñado con ❤️ y Next.js
           </p>
         </div>
       </div>

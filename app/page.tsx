@@ -5,10 +5,9 @@ import { Services } from "@/components/sections/Services";
 import { Experience } from "@/components/sections/Experience";
 import { WhyHireMe } from "@/components/sections/WhyHireMe";
 import { Portfolio } from "@/components/sections/Portfolio";
-import { Testimonials } from "@/components/sections/Testimonials";
-import { Blog } from "@/components/sections/Blog";
 import { Contact } from "@/components/sections/Contact";
 import { Marquee } from "@/components/sections/Marquee";
+import { Education } from "@/components/sections/Education";
 
 export default function Home() {
   return (
@@ -19,10 +18,9 @@ export default function Home() {
         <Services />
         <Experience />
         <WhyHireMe />
+        <Education />
         <Portfolio />
-        <Testimonials />
         <Marquee />
-        <Blog />
         <Contact />
       </main>
       <Footer />
