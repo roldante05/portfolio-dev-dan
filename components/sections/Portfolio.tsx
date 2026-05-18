@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { GitBranch } from "lucide-react";
+import { GitBranch, ArrowRight, ArrowLeft } from "lucide-react";
 
 const categories = ["Todos", "Personales", "Empresariales"];
 
@@ -50,36 +50,29 @@ const projects = [
     title: "Scaffolding Factory",
     category: "Personales",
     image: "/projects-personal/scaffolding.png",
-    description: "Generador de arquitecturas base para proyectos Laravel, enfocado en estandarización de código y productividad.",
+    description: "Herramienta CLI para generar scaffolding profesional de proyectos web en Laravel y PHP Vanilla. Automatiza la creación de boilerplates con Docker, autenticación segura, Tailwind/Bootstrap, bases de datos y wizard interactivo de instalación.",
     url: "https://github.com/roldante05/scaffolding-factory"
   },
   {
     title: "TV-FlexDan",
     category: "Personales",
     image: "/projects-personal/tv-flexdan.png",
-    description: "Plataforma de catálogo multimedia con interfaz dinámica construida para alto rendimiento y fluidez.",
+    description: "Plataforma de streaming estilo Netflix desarrollada con Laravel (PHP), Livewire y Tailwind CSS. Integra la API de TMDB para catálogo de películas y series, canales de TV argentinos, componentes interactivos (carruseles, grids y detalles) y entorno Docker.",
     url: "https://github.com/roldante05/tv-flexdan"
   },
   {
     title: "Sistema de Gestión de Ventas",
     category: "Personales",
     image: "/projects-personal/abmventas.png",
-    description: "Sistema robusto de gestión comercial con control de stock, facturación y reportes analíticos detallados.",
+    description: "Sistema de gestión de ventas e inventario desarrollado en PHP puro con Composer y MySQL. Incluye CRUD completo para clientes, productos, ventas y usuarios, autenticación (login, registro y recuperación de contraseña) y manejo de datos geográficos.",
     url: "https://github.com/roldante05/php/tree/main/sistema_ventas"
   },
   {
     title: "Roldy Burger E-commerce",
     category: "Personales",
     image: "/projects-personal/roldy-burger.png",
-    description: "Plataforma de e-commerce gastronómico con flujo completo de pedidos y panel administrativo dinámico.",
+    description: "Aplicación web full-stack desarrollada con Laravel (PHP) para la gestión de una hamburguesería. Incluye sitio público con menú, carrito y pagos con Mercado Pago, más panel administrativo completo de productos, pedidos, sucursales y usuarios.",
     url: "https://github.com/roldante05/laravel/tree/main/burger2022"
-  },
-  {
-    title: "ABM Clientes Pro",
-    category: "Personales",
-    image: "/projects-personal/abmclientes.png",
-    description: "Gestor de relaciones con clientes (CRM) optimizado para velocidad, facilidad de uso y persistencia eficiente.",
-    url: "https://github.com/roldante05/php/tree/main/abmclientes"
   },
 ];
 
@@ -113,15 +106,15 @@ export function Portfolio() {
   return (
     <section id="portfolio" className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        <div className="flex flex-col md:flex-row justify-md-between items-md-end mb-4 gap-8">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Echemos un vistazo a<br />mi <span className="text-primary italic">Portafolio</span>
+              Mi <span className="text-primary italic">Portafolio</span>
             </h2>
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-4 mb-16">
+        <div className="flex flex-wrap gap-4 mb-9">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -188,15 +181,15 @@ export function Portfolio() {
             <>
               <button
                 onClick={prevPage}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 md:-translate-x-24 w-12 h-12 rounded-full bg-surface border border-white/10 flex items-center justify-center text-white hover:bg-primary hover:text-black transition-all z-10"
+                className="p-2 absolute hidden md:block left-0 top-1/2 -translate-y-1/2 -translate-x-16 md:-translate-x-24 w-12 h-12 rounded-full bg-surface border border-white/10 flex items-center justify-center text-white hover:bg-primary hover:text-black transition-all "
               >
-                ←
+                <ArrowLeft />
               </button>
               <button
                 onClick={nextPage}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 md:translate-x-24 w-12 h-12 rounded-full bg-surface border border-white/10 flex items-center justify-center text-white hover:bg-primary hover:text-black transition-all z-10"
+                className="p-2 absolute hidden md:block right-0 top-1/2 -translate-y-1/2 translate-x-16 md:translate-x-24 w-12 h-12 rounded-full bg-surface border border-white/10 flex items-center justify-center text-white hover:bg-primary hover:text-black transition-all z-10"
               >
-                →
+                <ArrowRight />
               </button>
 
               <div className="flex justify-center gap-2 mt-12">
@@ -204,9 +197,8 @@ export function Portfolio() {
                   <button
                     key={i}
                     onClick={() => setCurrentPage(i)}
-                    className={`w-3 h-3 rounded-full transition-all ${
-                      i === currentPage ? "bg-primary" : "bg-zinc-700"
-                    }`}
+                    className={`w-3 h-3 rounded-full transition-all ${i === currentPage ? "bg-primary" : "bg-zinc-700"
+                      }`}
                   />
                 ))}
               </div>
