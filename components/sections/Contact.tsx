@@ -23,16 +23,12 @@ export function Contact() {
           </h2>
 
           <div className="flex flex-col items-center gap-8">
-            <div className="flex items-center gap-4 bg-white/5 border border-white/10 px-6 py-4 rounded-full">
-              <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
-                <Mail size={20} />
-              </div>
-              <span className="text-lg md:text-xl font-medium">danteroldan72@gmail.com</span>
-            </div>
 
             <Link href="mailto:danteroldan72@gmail.com">
+
               <Button size="lg" variant="primary" className="gap-2 px-10">
-                Enviar Mensaje <ArrowRight size={20} />
+                <Mail size={20} />
+                Enviar Mensaje
               </Button>
             </Link>
           </div>

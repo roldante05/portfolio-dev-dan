@@ -38,7 +38,7 @@ export function Hero() {
 
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
           Soy <span className="text-primary italic">Dante</span>,<br />
-          Desarrollador web
+          Desarrollador Backend
         </h1>
 
         <div className="relative mb-12">
@@ -58,7 +58,7 @@ export function Hero() {
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -right-4 top-1/4 glass p-4 rounded-2xl flex flex-col items-start gap-1"
+            className="lg:absolute -right-4 top-1/4 glass p-4 rounded-2xl flex flex-col items-start gap-1 hidden md:flex"
           >
             <div className="flex gap-0.5 text-primary">
               {[...Array(5)].map((_, i) => (
@@ -72,7 +72,7 @@ export function Hero() {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            className="absolute -left-8 bottom-1/4 glass p-4 rounded-2xl flex items-center gap-3"
+            className="lg:absolute -left-8 bottom-1/4 glass p-4 rounded-2xl flex items-center gap-3 hidden md:flex"
           >
             <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
               <Star size={16} />
